@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <section className="hero">
-        <div className="hero_inner">
+        <div className="hero-inner">
           <div className="hero_bubble">
             <img src={avatar} alt="Dragos - " className="hero_avatar" />
             <p className='secondary'>Welcome to my website!</p>
