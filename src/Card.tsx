@@ -35,10 +35,14 @@ export default function Card({role}: CardProps) {
             }
           </div>
           <div className="card-footer">
-            <p className='l accent'>{role.startDate}</p>
-            <p className='l accent'>{role.endDate} </p>
-            <p className='xs muted'>Start date</p>
-            <p className='xs muted'>End date</p>
+            <div className="card-footer-element">
+               <p className='l accent'>{role.startDate}</p>
+               <p className='xs muted'>Start date</p>
+            </div>
+            <div className="card-footer-element">
+              <p className='l accent'>{role.endDate} </p>
+              <p className='xs muted'>End date</p>
+            </div>
           </div>
         </div>
       </div>
