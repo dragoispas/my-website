@@ -147,7 +147,7 @@ h3 {
   flex-direction: column;
   gap: 1.5rem;
   align-items: flex-start;
-  padding: 200px var(--lateral-padding) var(--vertical-padding) var(--lateral-padding);
+  padding: clamp(140px, 20vw, 200px) var(--lateral-padding) var(--vertical-padding) var(--lateral-padding);
 }
 
 .hero::before {
