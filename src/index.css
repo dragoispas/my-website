@@ -7,11 +7,11 @@
   --stripe-mid: #0f1c2a;
   --stripe-light: #152638;
 
-  --spot-blue: rgba(64, 145, 227, .4);
-  --spot-teal: rgba(78, 200, 227, .4);
+  --color-secondary-40: rgba(64, 145, 227, .4);
+  --color-primary-40: rgba(78, 200, 227, .4);
 
-  --spot-blue-soft: rgba(64, 145, 227, .2);
-  --spot-teal-soft: rgba(78, 200, 227, .2);
+  --color-secondary-20: rgba(64, 145, 227, .2);
+  --color-primary-20: rgba(78, 200, 227, .2);
 
   --lateral-padding: clamp(1.5rem, 6vw, 6rem);
   --vertical-padding: clamp(4rem, 6vw, 6rem);
@@ -136,31 +136,12 @@ h3 {
   color: var(--text-accent);
 }
 
-.icon-button {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* background: rgba(255,255,255,0.08); */
-  border: 2px solid var(--text-secondary);
-  color: var(--text-secondary);
-  opacity: 0.6;
-}
-
-.icon-button:hover {
-  /* background: rgba(255,255,255,0.16); */
-  border: 2px solid var(--text-primary);
-  color: var(--text-primary);
-}
-
 .hero {
   position: relative;
 
   background:
-    radial-gradient(circle at 20% 110%, var(--spot-teal), transparent 70%),
-    radial-gradient(circle at 80% -10%, var(--spot-blue), transparent 70%),
+    radial-gradient(circle at 20% 110%, var(--color-primary-40), transparent 70%),
+    radial-gradient(circle at 80% -10%, var(--color-secondary-40), transparent 70%),
     var(--bg-deep);
   background-repeat: no-repeat;
   background-size: cover;
@@ -223,7 +204,7 @@ h3 {
   padding: 70px var(--lateral-padding) 70px var(--lateral-padding);
   --about-glow-y: 180%;
   background:
-    radial-gradient(circle at 50% var(--about-glow-y), var(--spot-teal-soft), transparent 70%),
+    radial-gradient(circle at 50% var(--about-glow-y), var(--color-primary-20), transparent 70%),
     var(--bg-deep);
 
   display: flex;
@@ -317,7 +298,7 @@ h3 {
   color: var(--text-muted);
 }
 
-.experience_inner {
+.experience {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -385,12 +366,9 @@ h3 {
 }
 
 .slide-container {
-  /* width: 100%; */
   display: flex;
   align-items: flex-start;
-  /* transform: translateX(-50vw); */
   transition: 300ms ease-in-out;
-  /* overflow: hidden; */
 }
 
 .card-stack {
@@ -431,8 +409,8 @@ h3 {
   border-radius: 20px; 
   
   background:
-    radial-gradient(circle at 10% 110%, var(--spot-teal-soft), transparent 50%),
-    radial-gradient(circle at 90% -10%, var(--spot-blue-soft), transparent 50%),
+    radial-gradient(circle at 10% 110%, var(--color-primary-20), transparent 50%),
+    radial-gradient(circle at 90% -10%, var(--color-secondary-20), transparent 50%),
     var(--bg-deep);
 
   padding: 48px 36px;
@@ -487,7 +465,7 @@ h3 {
   --footer-glow-y: -180%;
   padding: var(--vertical-padding) var(--lateral-padding) var(--vertical-padding) var(--lateral-padding);
   background:
-    radial-gradient(circle at 50% var(--footer-glow-y), var(--spot-teal-soft), transparent 70%),
+    radial-gradient(circle at 50% var(--footer-glow-y), var(--color-primary-20), transparent 70%),
     var(--bg-deep);
 
   display: flex;
@@ -565,7 +543,7 @@ h3 {
 .tooltip::before,
 .tooltip::after{
     --scale: 0;
-    --tooltip-color: var(--spot-teal-soft);
+    --tooltip-color: var(--color-primary-20);
     --arrow-size: 10px;
 
     position: absolute;

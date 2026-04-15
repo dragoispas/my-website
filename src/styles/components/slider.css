@@ -1,0 +1,11 @@
+.slider-viewport {
+  width: 100%;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.slide-container {
+  display: flex;
+  align-items: flex-start;
+  transition: 300ms ease-in-out;
+}

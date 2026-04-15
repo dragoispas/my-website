@@ -4,6 +4,7 @@ import Card from './Card'
 import { roles } from './data'
 import ExperiencePagination from "./ExperiencePagination";
 import Tooltip from "./Tooltip";
+import { ThemeRail } from "./ThereRail";
 
 function App() {
   const [activeCardStack, setActiveCardStack] = useState<"left" | "right">("left");
@@ -81,6 +82,7 @@ function App() {
   return (
     <>
       <section className="hero">
+        
         <div className="hero-inner">
           <div className="hero-bubble">
             <img src={avatar} alt="Dragos - " className="hero-avatar" />
@@ -96,6 +98,8 @@ function App() {
           <p className='muted s'>Scroll down to see portfolio ↓</p>
         </div>
       </section>
+      
+      <ThemeRail/>
       <section className="about">
         
         <div className="about-logos">
@@ -122,44 +126,41 @@ function App() {
       </section>
       <section className='experience'>
         
-        
-        <div className="experience_inner">
-          <div className="experience-header">
+        <div className="experience-header">
 
-            <div className="experience-eyebrow-row">
-              <p className="eyebrow">Experience</p>
-              <Tooltip data="You can use arrow keys or swiipe if you have a touchscreen!"/>
-            </div>
-            <div className="experience-title">
-              <h2>{title}</h2>
-            </div>
-            <ExperiencePagination active={activeCardStack} onChange={slide}/>
+          <div className="experience-eyebrow-row">
+            <p className="eyebrow">Experience</p>
+            <Tooltip data="You can use arrow keys or swiipe if you have a touchscreen!"/>
           </div>
-          <div
-            className="slider-viewport"
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-            onTouchCancel={handleTouchEnd}
-          >
-            <div
-              className="slide-container"
-              style={{
-                transform: translate,
-                height: containerHeight,
-                transition: isDragging ? "none" : undefined,
-              }}
-            >
-              <div className="card-stack" ref={leftCardStackRef}>
-                {roles.map(role => <Card key={role.title} role={role}/>)}
-              </div>
-              <div className="card-stack" ref={rightCardStackRef}>
-                <Card key={roles[0].title} role={roles[0]}/>
-              </div>
-            </div>
+          <div className="experience-title">
+            <h2>{title}</h2>
           </div>
-
+          <ExperiencePagination active={activeCardStack} onChange={slide}/>
         </div>
+        <div
+          className="slider-viewport"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onTouchCancel={handleTouchEnd}
+        >
+          <div
+            className="slide-container"
+            style={{
+              transform: translate,
+              height: containerHeight,
+              transition: isDragging ? "none" : undefined,
+            }}
+          >
+            <div className="card-stack" ref={leftCardStackRef}>
+              {roles.map(role => <Card key={role.title} role={role}/>)}
+            </div>
+            <div className="card-stack" ref={rightCardStackRef}>
+              <Card key={roles[0].title} role={roles[0]}/>
+            </div>
+          </div>
+        </div>
+
       </section>
       <section className='footer'>
         <div className="app-icons">

@@ -1,0 +1,100 @@
+.about {
+  padding: 70px var(--lateral-padding) 70px var(--lateral-padding);
+  --about-glow-y: 180%;
+  background:
+    radial-gradient(circle at 50% var(--about-glow-y), var(--color-primary-20), transparent 70%),
+    var(--bg-deep);
+
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4rem, 6vw, 6rem);
+}
+
+.about-description {
+  font-size: var(--about-description);
+}
+
+.about-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem 2.5rem;
+}
+
+.about-logo {
+  width: clamp(110px, 14vw, 185px);
+  height: 64px;
+  flex: 0 0 auto;
+  opacity: 0.9;
+
+  background: linear-gradient(
+    to bottom,
+    #a7adb5 0%,
+    #858c95 40%,
+    #616872 75%,
+    #4c535d 100%
+  );
+
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}
+
+.about-content {
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 40px;
+}
+
+.nextgen {
+  -webkit-mask-image: url("../../assets/NextGen_logo.png");
+  mask-image: url("../../assets/NextGen_logo.png");
+}
+
+.sensidev {
+  -webkit-mask-image: url("../../assets/Sensidev_logo.png");
+  mask-image: url("../../assets/Sensidev_logo.png");
+}
+
+.ledidi {
+  -webkit-mask-image: url("../../assets/Ledidi_logo.png");
+  mask-image: url("../../assets/Ledidi_logo.png");
+}
+
+.jnj {
+  -webkit-mask-image: url("../../assets/j&j_logo.png");
+  mask-image: url("../../assets/j&j_logo.png");
+}
+
+.endava {
+  -webkit-mask-image: url("../../assets/Endava_logo.png");
+  mask-image: url("../../assets/Endava_logo.png");
+}
+
+@media screen and (min-width: 1920px) {
+  .about {
+    align-items: center;
+    --about-glow-y: min(calc(180% + ((100vw - 1920px))), 260%);
+  }
+
+
+  .about-content {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 972px) {
+  .about-logo {
+    width: clamp(140px, 20vw, 185px);
+  }
+
+  .about-logos {
+    justify-content: center;
+  }
+}

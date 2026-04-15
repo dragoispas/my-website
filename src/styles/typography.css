@@ -1,0 +1,33 @@
+h1 {
+  font-size: var(--font-h1);
+}
+
+h2 {
+  font-size: var(--font-h2);
+}
+
+h3 {
+  font-size: var(--font-h3);
+}
+
+.xxl { font-size: var(--font-xxl); }
+.xl { font-size: var(--font-xl); }
+.l { font-size: var(--font-l); }
+.m { font-size: var(--font-m); }
+.s { font-size: var(--font-s); font-weight: var(--font-light); }
+.xs { font-size: var(--font-xs); font-weight: var(--font-light); }
+.xxs { font-size: var(--font-xxs); font-weight: var(--font-light); }
+
+.primary { color: var(--text-primary); }
+.secondary { color: var(--text-secondary); }
+.muted { color: var(--text-muted); }
+.accent { color: var(--text-accent); }
+
+.eyebrow {
+  margin: 0;
+  font-size: var(--font-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}

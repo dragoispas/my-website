@@ -1,0 +1,37 @@
+.experience {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:var(--cards-gap);
+  padding: var(--vertical-padding) 0 var(--vertical-padding) 0;
+}
+
+.experience-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:var(--cards-gap);
+  padding: 0 var(--lateral-padding) 0 var(--lateral-padding);
+}
+
+.experience-eyebrow-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  transform: translateX(calc(var(--icon-s)/2));
+}
+
+.experience-eyebrow-row > .tooltip {
+  transform: translateX(1rem)
+}
+
+.experience-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}

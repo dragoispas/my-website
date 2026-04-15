@@ -1,0 +1,54 @@
+:root {
+  --text-primary: #f3f4f6;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-muted-transparent: rgb(148 163 184 / 0.5);
+
+  /* Theme controls */
+  --accent-hue: 196;
+  --accent-sat: 78%;
+  --accent-light: 62%;
+
+  /* Derived accent palette */
+  --bg-deep: hsl(var(--accent-hue) 0% 5%);
+
+  --color-primary: hsl(var(--accent-hue) var(--accent-sat) var(--accent-light));
+  --color-secondary: hsl(calc(var(--accent-hue) + 18) 72% 58%);
+  --text-accent: hsl(var(--accent-hue) 82% 70%);
+  --bg-blue: hsl(calc(var(--accent-hue) + 10) 48% 30%);
+
+  --color-primary-20: hsl(var(--accent-hue) var(--accent-sat) var(--accent-light) / 0.2);
+  --color-secondary-20: hsl(calc(var(--accent-hue) + 18) 72% 58% / 0.2);
+
+  --color-primary-40: hsl(var(--accent-hue) var(--accent-sat) var(--accent-light) / 0.4);
+  --color-secondary-40: hsl(calc(var(--accent-hue) + 18) 72% 58% / 0.4);
+
+  /* Slightly theme-aware tooltip */
+  --tooltip-bg-color: hsl(var(--accent-hue) 22% 22% / 0.82);
+  --tooltip-arrow-size: 15px;
+
+  --lateral-padding: clamp(1.5rem, 6vw, 6rem);
+  --vertical-padding: clamp(4rem, 6vw, 6rem);
+  --cards-gap: clamp(2rem, 3vw, 3rem);
+
+  --hero-title: clamp(1.5rem, 5vw, 2.5rem);
+  --about-description: clamp(1.25rem, 2.25vw, 1.5rem);
+  --font-h1: 2.5rem;
+  --font-h2: clamp(1.8rem, 2.2vw, 2.5rem);
+  --font-h3: clamp(1.4rem, 1.8vw, 1.8rem);
+
+  --font-xxl: clamp(2.5rem, 2.65vw, 3.1rem);
+  --font-xl: clamp(2.1rem, 2.35vw, 2.6rem);
+  --font-l: clamp(1.58rem, 1.95vw, 1.9rem);
+  --font-m: clamp(1.28rem, 1.52vw, 1.48rem);
+  --font-s: clamp(1.06rem, 1.18vw, 1.16rem);
+  --font-xs: clamp(0.96rem, 1.06vw, 1.06rem);
+  --font-xxs: clamp(0.9rem, 0.96vw, 0.96rem);
+
+  --font-light: 200;
+
+  --icon-s: 24px;
+  --icon-m: 32px;
+
+  --rail-color: rgb(156, 156, 156);
+}

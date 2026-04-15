@@ -1,0 +1,33 @@
+.theme-rail {
+  height: 2px;
+  width: 100%;
+  border-radius: 50%;
+
+  background-color: var(--rail-color);
+
+  position: relative;
+}
+
+.theme-stop-wrap {
+  width: 100%;
+
+  position: absolute;
+
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.theme-stop {
+  height: 8px;
+  width:  8px;
+  background-color: var(--bg-deep);
+  border-radius: 50%;
+  transform: translateY(-4px);
+  border: 2px solid var(--rail-color)
+}
+
+.active {
+  background: hsl(var(--accent-hue) 85% 62%);
+  box-shadow: 0 0 20px hsl(var(--accent-hue) 85% 62% / 0.45);
+}

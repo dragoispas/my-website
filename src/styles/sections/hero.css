@@ -1,0 +1,71 @@
+.hero {
+  position: relative;
+
+  background:
+    radial-gradient(circle at 20% 110%, var(--color-primary-40), transparent 70%),
+    radial-gradient(circle at 80% -10%, var(--color-secondary-40), transparent 70%),
+    var(--bg-deep);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-title {
+  font-size: var(--hero-title);
+}
+
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding: clamp(140px, 20vw, 200px) var(--lateral-padding) var(--vertical-padding) var(--lateral-padding);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../../slabs.png") center / cover no-repeat;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.hero-bubble {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.45rem 1rem 0.45rem 0.45rem;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  font-size: var(--font-xs);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+@media screen and (max-width: 650px) {
+  .hero-bubble {
+    gap: 10px;
+    padding: 0.4rem .95rem 0.4rem 0.4rem;
+    border-radius: 999px;
+
+    font-size: var(--font-xxs);
+  }
+}
+
+.hero-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+@media screen and (min-width: 1920px) {
+  .hero-inner {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
