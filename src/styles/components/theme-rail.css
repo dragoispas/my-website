@@ -1,9 +1,10 @@
 .theme-rail {
   height: 2px;
   width: 100%;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 
-  background-color: var(--rail-color);
+  /* background-color: var(--rail-color); */
+  background: radial-gradient(circle, var(--rail-color) 50%, var(--bg-deep) 100%);
 
   position: relative;
 }
@@ -30,4 +31,12 @@
 .active {
   background: hsl(var(--accent-hue) 85% 62%);
   box-shadow: 0 0 20px hsl(var(--accent-hue) 85% 62% / 0.45);
+}
+
+@media screen and (max-width: 440px) {
+  .theme-rail {
+    background: var(--rail-color);
+    border-radius: 50%;
+  }
+
 }
