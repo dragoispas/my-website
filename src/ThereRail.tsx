@@ -33,8 +33,8 @@ export function ThemeRail() {
                 type="button"
                 className={`theme-stop ${active ? "active" : ""}`}
                 onClick={() => setThemeIndex(index)}
-                aria-label={`Set ${theme.name} theme`}
                 title={theme.name}
+                style={{ "--theme-hue": theme.hue } as React.CSSProperties}
               />
             );
           })}

@@ -1,11 +1,7 @@
 .theme-rail {
   height: 2px;
   width: 100%;
-  /* border-radius: 50%; */
-
-  /* background-color: var(--rail-color); */
   background: radial-gradient(circle, var(--rail-color) 50%, var(--bg-deep) 100%);
-
   position: relative;
 }
 
@@ -20,17 +16,52 @@
 }
 
 .theme-stop {
+  position: relative;
   height: 8px;
   width:  8px;
   background-color: var(--bg-deep);
   border-radius: 50%;
-  transform: translateY(-4px);
-  border: 2px solid var(--rail-color)
+  transform: translateY(-5px);
+  border: 2px solid var(--rail-color);
+  cursor: pointer;
+  transition: 300ms;
 }
 
 .active {
   background: hsl(var(--accent-hue) 85% 62%);
-  box-shadow: 0 0 20px hsl(var(--accent-hue) 85% 62% / 0.45);
+  box-shadow: 0 0 20px hsl(var(--accent-hue) 85% 62%);
+}
+
+.theme-stop::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  cursor: pointer;
+  background: rgba(0,0,0,0);
+  transition: 300ms;
+}
+
+.theme-stop::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  cursor: pointer;
+  background: rgba(0,0,0,0);
+}
+
+.theme-stop:hover::before {
+  background: hsl(var(--theme-hue) 85% 62% / 0.25) 60%;
+  /* box-shadow: 0 0 20px hsl(var(--theme-hue) 85% 62%); */
 }
 
 @media screen and (max-width: 440px) {
@@ -38,5 +69,4 @@
     background: var(--rail-color);
     border-radius: 50%;
   }
-
 }
