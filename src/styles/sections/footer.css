@@ -1,5 +1,5 @@
 .footer {
-  --footer-glow-y: -180%;
+  --footer-glow-y: -80%;
   padding: var(--vertical-padding) var(--lateral-padding) var(--vertical-padding) var(--lateral-padding);
   background:
     radial-gradient(circle at 50% var(--footer-glow-y), var(--color-primary-20), transparent 70%),
@@ -12,6 +12,6 @@
 
 @media screen and (min-width: 1920px) {
   .footer {
-    --footer-glow-y: max(calc(-180% - (100vw - 1920px)), -260%);
+    --footer-glow-y: max(calc(-180% - (100vw - 1920px)), -160%);
   }
 }
