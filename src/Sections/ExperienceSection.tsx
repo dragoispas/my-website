@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState, type TouchEvent } from "react"
-import Card from "../Card";
-import { roles } from "../data";
+import RoleCard from "../Components/RoleCard";
+import { projects, roles } from "../data";
 import ExperiencePagination from "../Components/ExperiencePagination";
 import Tooltip from "../Components/Tooltip";
+import ProjectCard from "../Components/ProjectCard";
 
 export default function ExperienceSection() {
 const [activeCardStack, setActiveCardStack] = useState<"left" | "right">("left");
@@ -105,10 +106,10 @@ const [activeCardStack, setActiveCardStack] = useState<"left" | "right">("left")
           }}
         >
           <div className="card-stack" ref={leftCardStackRef}>
-            {roles.map(role => <Card key={role.title} role={role}/>)}
+            {roles.map(role => <RoleCard key={role.title} role={role}/>)}
           </div>
           <div className="card-stack" ref={rightCardStackRef}>
-            <Card key={roles[0].title} role={roles[0]}/>
+            {projects.map(project => <ProjectCard key={project.title} project={project}/>)}
           </div>
         </div>
       </div>

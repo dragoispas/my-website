@@ -1,13 +1,16 @@
 :root {
-  --text-primary: #f3f4f6;
-  --text-secondary: #cbd5e1;
-  --text-muted: #94a3b8;
-  --text-muted-transparent: rgb(148 163 184 / 0.5);
 
   /* Theme controls */
   --accent-hue: 196;
   --accent-sat: 78%;
   --accent-light: 62%;
+
+  /* Derived text colors */
+  --text-primary: hsl(var(--accent-hue) 10% 92%);
+  --text-secondary: hsl(var(--accent-hue) 15% 80%);
+  --text-muted: hsl(var(--accent-hue) 10% 65%);
+  --text-muted-2: hsl(var(--accent-hue) 10% 70%);
+  --text-muted-transparent: hsl(var(--accent-hue) 10% 65% / 0.5);
 
   /* Derived accent palette */
   --bg-deep: hsl(var(--accent-hue) 0% 5%);

@@ -52,28 +52,28 @@
   gap: 0.75rem;
 }
 
-.tags {
+.card-tags {
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
 }
 
-.tag {
+.card-tag {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 30px;
   padding: 0 10px;
-  border: 1px solid var(--text-muted);
+  border: 1px solid var(--text-muted-2);
   border-radius: 15px;
 }
 
-.tag > p {
-  color: var(--text-muted);
+.card-tag > p {
+  color: var(--text-muted-2);
   font-size: var(--font-xxs);
 }
 
-.card-footer {
+.role-card-footer {
   /* width: 350px; */
   display: flex;
   /* justify-content: space-between; */
@@ -81,7 +81,7 @@
   gap: 2rem;
 }
 
-.card-footer-element {
+.role-card-footer-element {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
