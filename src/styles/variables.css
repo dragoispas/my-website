@@ -7,9 +7,9 @@
 
   /* Derived text colors */
   --text-primary: hsl(var(--accent-hue) 10% 92%);
-  --text-secondary: hsl(var(--accent-hue) 15% 80%);
-  --text-muted: hsl(var(--accent-hue) 10% 65%);
-  --text-muted-2: hsl(var(--accent-hue) 10% 70%);
+  --text-secondary: hsl(var(--accent-hue) 10% 80%);
+  --text-muted: hsl(var(--accent-hue) 5% 65%);
+  --text-muted-2: hsl(var(--accent-hue) 8% 70%);
   --text-muted-transparent: hsl(var(--accent-hue) 10% 65% / 0.5);
 
   /* Derived accent palette */

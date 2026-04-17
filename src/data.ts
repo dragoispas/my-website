@@ -167,7 +167,7 @@ export const projects: Project[] = [
 export const heroData = {
   name: "Dragos Ispas",
   welcomeMessage: "Welcome to my website!",
-  tagline: "nuilding reliable software with care"
+  tagline: "building reliable software with care"
 }
 
 export const aboutData = {
