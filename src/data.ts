@@ -55,3 +55,14 @@ export const roles:Role[] = [
     endDate: "May 2020"
   }
 ]
+
+export const heroData = {
+  name: "Dragos Ispas",
+  welcomeMessage: "Welcome to my website!",
+  tagline: "nuilding reliable software with care"
+}
+
+export const aboutData = {
+  sectionOne: "Frontend-focused engineer with 4+ years of experience delivering production features across large-scale React + TypeScript, Next.js, React Native, and Node.js applications.",
+  sectionTwo: "I’m known for clear communication, attention to detail, and shipping thoughtful, dependable software."
+}

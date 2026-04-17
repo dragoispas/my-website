@@ -27,7 +27,7 @@
   transition: 300ms;
 }
 
-.active {
+.theme-stop.active {
   background: hsl(var(--accent-hue) 85% 62%);
   box-shadow: 0 0 20px hsl(var(--accent-hue) 85% 62%);
 }
