@@ -126,38 +126,38 @@ export const projects: Project[] = [
       "Styled Components"
     ],
     description:
-      "A character browser built with React, TypeScript, Redux, and React Router, originally created as an interview task. The app focuses on clean data flow, URL-driven filtering, and efficient state usage, with searchable character listings, status-based filtering, and detailed character views. Although small in scope, it highlights practical frontend architecture decisions around routing, API querying, client-side caching, and shaping fetched data for efficient lookup.",
+      "A React and TypeScript character browser built around server-side API filtering, normalized Redux state, and route-based detail pages. The app supports debounced search, status filtering, incremental loading, and cache-aware fetching to avoid unnecessary requests while keeping navigation and data flow predictable.",
     highlights: [
       {
         highlight: "Built filtering around API query parameters instead of only client-side state.",
         details: [
           "Implemented a search bar with status filtering that requests filtered character data directly from the API",
-          "Used URL/query-driven fetching logic so filtering behavior stays explicit and scalable",
-          "Designed the feature around server-side filtering rather than downloading unnecessary data up front"
+          "Constructed requests dynamically with URL query parameters for name, status, and pagination",
+          "Designed the filtering flow around server-side querying instead of fetching unnecessary data up front"
         ]
       },
       {
-        highlight: "Improved lookup efficiency by reshaping fetched data for application use.",
+        highlight: "Structured Redux state for efficient lookup and reuse across the app.",
         details: [
-          "Parsed fetched character data into a map structure for fast access by id",
-          "Used normalized Redux state to avoid repeatedly scanning arrays when opening character details",
-          "Kept previously fetched entities available for reuse across interactions"
+          "Normalized fetched characters into an id-keyed map for fast access",
+          "Stored character ids separately to preserve rendering order while keeping lookup efficient",
+          "Reused cached character data across list and detail views instead of repeatedly scanning arrays or refetching"
         ]
       },
       {
-        highlight: "Added practical caching behavior to reduce unnecessary requests.",
+        highlight: "Added cache-aware and dependent data fetching logic.",
         details: [
-          "Only requested a character if it was not already present in Redux state",
-          "Reused cached character data when navigating between list and detail views",
-          "Used route-based logic with React Router to load the correct details view"
+          "Only requested a character on the details page if it was not already present in Redux state",
+          "Derived episode ids from the selected character's episode URLs after character data became available",
+          "Triggered secondary episode requests only when the required character data had already been resolved"
         ]
       },
       {
-        highlight: "Handled dependent data fetching based on already loaded entity data.",
+        highlight: "Improved the user experience with scalable interaction patterns.",
         details: [
-          "Extracted episode ids from episode URLs after the character data became available",
-          "Triggered secondary episode requests only when the selected character existed in state",
-          "Separated fetch steps clearly so the data dependencies stayed predictable and easy to follow"
+          "Debounced the search input before dispatching API requests to avoid excessive fetching",
+          "Implemented route-based navigation with React Router for dedicated character detail pages",
+          "Added incremental loading with a load-more flow for browsing additional results"
         ]
       }
     ]
