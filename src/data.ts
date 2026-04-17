@@ -30,7 +30,7 @@ export const roles:Role[] = [
   {
     title: "Frontend Developer",
     company: "Ledidi",
-    technologies: ["React", "Typescript", "Redux"],
+    technologies: ["React", "TypeScript", "Redux"],
     description: "Form builder and project management web app for medical professionals.",
     highlights: ["Implemented new variable types for the drag-and-drop form builder", "Worked on form history functionality (versioning and rollback)", "Fixed bugs across the application", "Performed code reviews"],
     startDate: "Nov 2022",
