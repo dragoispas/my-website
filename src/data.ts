@@ -61,9 +61,15 @@ type ProjectHighlights = {
   details: string[], // how to call this instead of highlights since it is confusing
 }
 
+type ProjectLinks = {
+  github?: string, 
+  live?: string
+}
+
 export type Project = {
   title: string,
   tags: string[],
+  links?: ProjectLinks,
   description: string,
   highlights: ProjectHighlights[]
 }
@@ -74,41 +80,36 @@ export const projects: Project[] = [
     tags: [
       "React",
       "TypeScript",
-      "Responsive design",
-      "Theme system",
-      "CSS variables",
-      "Custom hook",
-      "Local storage",
-      "Reusable components",
-      "Component architecture",
-      "UI animation"
+      "Responsive UI/UX",
+      "Touch + keyboard interactions"
     ],
+    links: {github: "https://github.com/dragoispas/my-website"},
     description:
-      "A personal portfolio website built with React and TypeScript, designed to feel polished, responsive, and distinctive. The project emphasizes thoughtful UI decisions, smooth interactions, and a scalable structure, with reusable components, fluid layouts, and a custom theming system that makes the interface feel both personal and maintainable. Special attention was given to responsiveness, visual consistency, and small details that make the experience feel intentional rather than generic.",
+      "A personal portfolio website built with React and TypeScript, designed to feel polished, responsive, and distinctive. The project emphasizes thoughtful UI decisions, smooth interactions, and a scalable structure, with reusable components, fluid layouts, and a custom theming system. Everything was built from scratch without external UI libraries, with special attention to responsiveness, visual consistency, and the small details that make the experience feel intentional rather than generic.",
     highlights: [
       {
-        highlight: "Built a personalized theming system instead of using a fixed color palette.",
+        highlight: "Built a custom accent-driven theming system from scratch.",
         details: [
-          "Created an accent-based theme selector using HSL and dynamic hue updates",
-          "Derived multiple UI colors from a single accent hue for consistent theming across text, backgrounds, tooltips, and interactive elements",
-          "Implemented the theme picker as a rail that works both as a practical control and as a visual separator between sections, making the feature feel integrated into the design rather than added on top of it",
-          "Used CSS custom properties to keep the theme scalable, maintainable, and easy to tweak"
+          "Created a theme selector based on HSL hue values instead of relying on predefined palettes",
+          "Derived multiple interface colors from a single accent hue to keep text, backgrounds, tooltips, and interactive elements visually consistent",
+          "Designed the theme picker as a rail that also acts as a visual separator between sections, making the feature feel integrated into the overall layout",
+          "Used CSS custom properties to keep the theme scalable, maintainable, and easy to adjust"
         ]
       },
       {
-        highlight: "Focused on polished UI behavior and a smooth frontend experience.",
+        highlight: "Focused on polished interactions and responsive UI behavior.",
         details: [
-          "Implemented a sliding card interaction to make content presentation more dynamic",
-          "Designed the layout to be fully responsive across screen sizes using fluid spacing and typography",
-          "Built reusable card-based UI sections to keep styling and structure consistent across the site"
+          "Implemented a sliding card interaction with keyboard and touch support to make content browsing feel more dynamic",
+          "Designed the layout to be fully responsive using fluid spacing and typography across screen sizes",
+          "Built reusable card-based sections to keep the interface consistent and easy to extend"
         ]
       },
       {
-        highlight: "Added practical state persistence and clean project structure.",
+        highlight: "Structured the project to feel personal, maintainable, and product-like.",
         details: [
-          "Built a custom localStorage hook to persist user preferences such as theme settings",
-          "Structured the content as typed data objects so sections can be rendered dynamically and extended easily",
-          "Used React and TypeScript together for safer component props and cleaner data modeling"
+          "Built a custom localStorage hook to persist user preferences such as theme selection",
+          "Modeled the site content as typed data objects so sections can be rendered dynamically and scaled cleanly",
+          "Used React and TypeScript together for safer component APIs and clearer data structures"
         ]
       }
     ]
@@ -120,44 +121,38 @@ export const projects: Project[] = [
       "TypeScript",
       "Redux",
       "React Router",
-      "API integration",
-      "Server-side filtering",
-      "State normalization",
       "Styled Components"
     ],
+    links: {github: "https://github.com/dragoispas/multiverse-characters", live:"https://rick-and-morty-git-master-dragoispas.vercel.app/"},
     description:
       "A React and TypeScript character browser built around server-side API filtering, normalized Redux state, and route-based detail pages. The app supports debounced search, status filtering, incremental loading, and cache-aware fetching to avoid unnecessary requests while keeping navigation and data flow predictable.",
     highlights: [
       {
-        highlight: "Built filtering around API query parameters instead of only client-side state.",
+        highlight: "Built filtering around API query parameters instead of relying only on client-side state.",
         details: [
-          "Implemented a search bar with status filtering that requests filtered character data directly from the API",
-          "Constructed requests dynamically with URL query parameters for name, status, and pagination",
-          "Designed the filtering flow around server-side querying instead of fetching unnecessary data up front"
+          "Implemented search and status filtering by requesting filtered character data directly from the API",
+          "Constructed requests dynamically with query parameters for name, status, and pagination"
         ]
       },
       {
-        highlight: "Structured Redux state for efficient lookup and reuse across the app.",
+        highlight: "Structured Redux state for efficient lookup and reuse.",
         details: [
           "Normalized fetched characters into an id-keyed map for fast access",
-          "Stored character ids separately to preserve rendering order while keeping lookup efficient",
-          "Reused cached character data across list and detail views instead of repeatedly scanning arrays or refetching"
+          "Reused cached character data across list and detail views instead of refetching"
         ]
       },
       {
         highlight: "Added cache-aware and dependent data fetching logic.",
         details: [
           "Only requested a character on the details page if it was not already present in Redux state",
-          "Derived episode ids from the selected character's episode URLs after character data became available",
-          "Triggered secondary episode requests only when the required character data had already been resolved"
+          "Triggered episode requests only after the required character data had been resolved"
         ]
       },
       {
-        highlight: "Improved the user experience with scalable interaction patterns.",
+        highlight: "Improved the browsing experience with scalable interaction patterns.",
         details: [
-          "Debounced the search input before dispatching API requests to avoid excessive fetching",
-          "Implemented route-based navigation with React Router for dedicated character detail pages",
-          "Added incremental loading with a load-more flow for browsing additional results"
+          "Debounced search input to avoid excessive API requests",
+          "Added route-based detail pages and incremental loading for smoother navigation"
         ]
       }
     ]

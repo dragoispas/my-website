@@ -26,7 +26,7 @@
 }
 
 .experience-eyebrow-row > .tooltip {
-  transform: translateX(1rem)
+  transform: translateX(1rem) translateY(2px);
 }
 
 .experience-title {

@@ -19,6 +19,13 @@ export default function ProjectCard({ project } : ProjectCardInterface) {
         </div>
       </div>
 
+      {project.links ? 
+        <div className="card-links">
+          {project.links.live ? <a href={project.links.live} target="_blank" rel="noopener noreferrer"><p className="xs accent">Live demo ↗</p></a> : null}
+          {project.links.github ? <a href={project.links.github} target="_blank" rel="noopener noreferrer"><p className="xs accent">Github repo ↗</p></a> : null}
+        </div>
+       : null}
+
       <p className="xs muted-2">{project.description}</p>
 
       <div>

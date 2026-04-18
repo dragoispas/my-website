@@ -58,6 +58,12 @@
   flex-wrap: wrap;
 }
 
+.card-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
 .card-tag {
   display: flex;
   align-items: center;
