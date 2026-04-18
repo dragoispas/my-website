@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type TouchEvent } from "react"
+import { useEffect, useLayoutEffect, useRef, useState, type TouchEvent } from "react"
 import RoleCard from "../Components/RoleCard";
 import { projects, roles } from "../data";
 import ExperiencePagination from "../Components/ExperiencePagination";
@@ -19,7 +19,7 @@ const [activeCardStack, setActiveCardStack] = useState<"left" | "right">("left")
     setActiveCardStack(direction)
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const currentCardStackRef = activeCardStack === "left" ? leftCardStackRef : rightCardStackRef;
 
     if (currentCardStackRef.current) {

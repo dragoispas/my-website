@@ -74,6 +74,13 @@ export type Project = {
   highlights: ProjectHighlights[]
 }
 
+export type Education = {
+  title: string,
+  institution: string,
+  date: string
+  certifications?: string[]
+}
+
 export const projects: Project[] = [
   {
     title: "This website",
@@ -156,6 +163,20 @@ export const projects: Project[] = [
         ]
       }
     ]
+  }
+]
+
+export const educationData: Education[] = [
+  {
+    title: "Bachelor’s in Computer Science",
+    institution: "University of Bucharest",
+    date: "2016 - 2019"
+  },
+  {
+    title: "Mathematics and Computer Science",
+    institution: '"George Coșbuc" National Bilingual College',
+    date: "2012 - 2016",
+    certifications: ['Cambridge English: Advanced', 'Goethe-Zertifikat A2']
   }
 ]
 

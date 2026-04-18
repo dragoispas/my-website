@@ -4,6 +4,7 @@
   justify-content: center;
   gap: 1rem;
   margin: auto;
+  margin-bottom: var(--vertical-padding);
 }
 
 .app-icon-container {
