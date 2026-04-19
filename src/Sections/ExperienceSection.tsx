@@ -12,7 +12,7 @@ const [activeCardStack, setActiveCardStack] = useState<"left" | "right">("left")
   const [isDragging, setIsDragging] = useState(false);
   const touchStartXRef = useRef<number | null>(null);
   const touchStartYRef = useRef<number | null>(null);
-  const swipeAxisRef = useRef<"x" | "y" | null>(null);
+  const swipeDirectionRef = useRef<"left" | "right" | "up" | "down" | null>(null);
 
   const leftCardStackRef = useRef<HTMLDivElement | null>(null);
   const rightCardStackRef = useRef<HTMLDivElement | null>(null);
@@ -50,7 +50,7 @@ const [activeCardStack, setActiveCardStack] = useState<"left" | "right">("left")
   function handleTouchStart(e: TouchEvent<HTMLDivElement>) {
     touchStartXRef.current = e.touches[0].clientX;
     touchStartYRef.current = e.touches[0].clientY;
-    swipeAxisRef.current = null;
+    swipeDirectionRef.current = null;
     setIsDragging(false);
     setDragOffset(0);
   }
@@ -63,17 +63,33 @@ const [activeCardStack, setActiveCardStack] = useState<"left" | "right">("left")
     const deltaX = currentX - touchStartXRef.current;
     const deltaY = currentY - touchStartYRef.current;
 
-    if (swipeAxisRef.current === null) {
-      const absX = Math.abs(deltaX);
-      const absY = Math.abs(deltaY);
+    if (swipeDirectionRef.current === null) {
+      const distance = Math.hypot(deltaX, deltaY);
       const lockThreshold = 10;
 
-      if (absX < lockThreshold && absY < lockThreshold) return;
+      if (distance < lockThreshold) return;
 
-      swipeAxisRef.current = absX > absY ? "x" : "y";
+      const angle = Math.atan2(-deltaY, deltaX) * (180 / Math.PI);
+
+      if (angle >= -30 && angle <= 30) {
+        swipeDirectionRef.current = "right";
+      } else if (angle >= 60 && angle <= 120) {
+        swipeDirectionRef.current = "up";
+      } else if (angle >= 150 || angle <= -150) {
+        swipeDirectionRef.current = "left";
+      } else if (angle >= -120 && angle <= -60) {
+        swipeDirectionRef.current = "down";
+      } else {
+        setIsDragging(false);
+        setDragOffset(0);
+        return;
+      }
     }
 
-    if (swipeAxisRef.current === "y") {
+    if (
+      swipeDirectionRef.current === "up" ||
+      swipeDirectionRef.current === "down"
+    ) {
       setIsDragging(false);
       setDragOffset(0);
       return;
@@ -88,17 +104,15 @@ const [activeCardStack, setActiveCardStack] = useState<"left" | "right">("left")
 
     const threshold = 60;
 
-    if (swipeAxisRef.current === "x") {
-      if (dragOffset <= -threshold) {
-        slide("right");
-      } else if (dragOffset >= threshold) {
-        slide("left");
-      }
+    if (swipeDirectionRef.current === "left" && dragOffset <= -threshold) {
+      slide("right");
+    } else if (swipeDirectionRef.current === "right" && dragOffset >= threshold) {
+      slide("left");
     }
 
     touchStartXRef.current = null;
     touchStartYRef.current = null;
-    swipeAxisRef.current = null;
+    swipeDirectionRef.current = null;
     setIsDragging(false);
     setDragOffset(0);
   }
