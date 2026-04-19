@@ -62,41 +62,33 @@ const [activeCardStack, setActiveCardStack] = useState<"left" | "right">("left")
     const currentY = e.touches[0].clientY;
     const deltaX = currentX - touchStartXRef.current;
     const deltaY = currentY - touchStartYRef.current;
+    const distance = Math.hypot(deltaX, deltaY);
+    const activationThreshold = 10;
 
-    if (swipeDirectionRef.current === null) {
-      const distance = Math.hypot(deltaX, deltaY);
-      const lockThreshold = 10;
+    if (distance < activationThreshold) return;
 
-      if (distance < lockThreshold) return;
+    const angle = Math.atan2(-deltaY, deltaX) * (180 / Math.PI);
+    const horizontalCone = 40;
+    const isRightSwipe = angle >= -horizontalCone && angle <= horizontalCone;
+    const isLeftSwipe = angle >= 180 - horizontalCone || angle <= -180 + horizontalCone;
 
-      const angle = Math.atan2(-deltaY, deltaX) * (180 / Math.PI);
-
-      if (angle >= -30 && angle <= 30) {
-        swipeDirectionRef.current = "right";
-      } else if (angle >= 60 && angle <= 120) {
-        swipeDirectionRef.current = "up";
-      } else if (angle >= 150 || angle <= -150) {
-        swipeDirectionRef.current = "left";
-      } else if (angle >= -120 && angle <= -60) {
-        swipeDirectionRef.current = "down";
-      } else {
-        setIsDragging(false);
-        setDragOffset(0);
-        return;
-      }
-    }
-
-    if (
-      swipeDirectionRef.current === "up" ||
-      swipeDirectionRef.current === "down"
-    ) {
-      setIsDragging(false);
-      setDragOffset(0);
+    if (isRightSwipe) {
+      swipeDirectionRef.current = "right";
+      setIsDragging(true);
+      setDragOffset(deltaX);
       return;
     }
 
-    setIsDragging(true);
-    setDragOffset(deltaX);
+    if (isLeftSwipe) {
+      swipeDirectionRef.current = "left";
+      setIsDragging(true);
+      setDragOffset(deltaX);
+      return;
+    }
+
+    swipeDirectionRef.current = null;
+    setIsDragging(false);
+    setDragOffset(0);
   }
 
   function handleTouchEnd() {
