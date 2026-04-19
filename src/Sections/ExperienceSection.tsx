@@ -11,6 +11,8 @@ const [activeCardStack, setActiveCardStack] = useState<"left" | "right">("left")
   const [dragOffset, setDragOffset] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const touchStartXRef = useRef<number | null>(null);
+  const touchStartYRef = useRef<number | null>(null);
+  const swipeAxisRef = useRef<"x" | "y" | null>(null);
 
   const leftCardStackRef = useRef<HTMLDivElement | null>(null);
   const rightCardStackRef = useRef<HTMLDivElement | null>(null);
@@ -47,15 +49,38 @@ const [activeCardStack, setActiveCardStack] = useState<"left" | "right">("left")
 
   function handleTouchStart(e: TouchEvent<HTMLDivElement>) {
     touchStartXRef.current = e.touches[0].clientX;
-    setIsDragging(true);
+    touchStartYRef.current = e.touches[0].clientY;
+    swipeAxisRef.current = null;
+    setIsDragging(false);
     setDragOffset(0);
   }
 
   function handleTouchMove(e: TouchEvent<HTMLDivElement>) {
-    if (touchStartXRef.current === null) return;
+    if (touchStartXRef.current === null || touchStartYRef.current === null) return;
 
     const currentX = e.touches[0].clientX;
-    setDragOffset(currentX - touchStartXRef.current);
+    const currentY = e.touches[0].clientY;
+    const deltaX = currentX - touchStartXRef.current;
+    const deltaY = currentY - touchStartYRef.current;
+
+    if (swipeAxisRef.current === null) {
+      const absX = Math.abs(deltaX);
+      const absY = Math.abs(deltaY);
+      const lockThreshold = 10;
+
+      if (absX < lockThreshold && absY < lockThreshold) return;
+
+      swipeAxisRef.current = absX > absY ? "x" : "y";
+    }
+
+    if (swipeAxisRef.current === "y") {
+      setIsDragging(false);
+      setDragOffset(0);
+      return;
+    }
+
+    setIsDragging(true);
+    setDragOffset(deltaX);
   }
 
   function handleTouchEnd() {
@@ -63,13 +88,17 @@ const [activeCardStack, setActiveCardStack] = useState<"left" | "right">("left")
 
     const threshold = 60;
 
-    if (dragOffset <= -threshold) {
-      slide("right");
-    } else if (dragOffset >= threshold) {
-      slide("left");
+    if (swipeAxisRef.current === "x") {
+      if (dragOffset <= -threshold) {
+        slide("right");
+      } else if (dragOffset >= threshold) {
+        slide("left");
+      }
     }
 
     touchStartXRef.current = null;
+    touchStartYRef.current = null;
+    swipeAxisRef.current = null;
     setIsDragging(false);
     setDragOffset(0);
   }

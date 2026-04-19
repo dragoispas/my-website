@@ -40,7 +40,7 @@ export default function FooterSection() {
               </div>
               {educationEntry.certifications?.length ?
                 <ul>
-                  {educationEntry.certifications.map(certification => <li className="muted">{certification}</li>)}
+                  {educationEntry.certifications.map(certification => <li><p className="s muted">{certification}</p></li>)}
                 </ul>
               : null}
             </div>
