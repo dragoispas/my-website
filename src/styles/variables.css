@@ -20,6 +20,9 @@
   --text-accent: hsl(var(--accent-hue) 82% 70%);
   --bg-blue: hsl(calc(var(--accent-hue) + 10) 48% 30%);
 
+  --color-primary-10: hsl(var(--accent-hue) var(--accent-sat) var(--accent-light) / 0.1);
+  --color-secondary-10: hsl(calc(var(--accent-hue) + 18) 72% 58% / 0.1);
+
   --color-primary-20: hsl(var(--accent-hue) var(--accent-sat) var(--accent-light) / 0.2);
   --color-secondary-20: hsl(calc(var(--accent-hue) + 18) 72% 58% / 0.2);
 
