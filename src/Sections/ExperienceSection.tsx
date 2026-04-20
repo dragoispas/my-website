@@ -103,7 +103,7 @@ const [activeCardStack, setActiveCardStack] = useState<"left" | "right">("left")
       <div className="experience-header">
         <div className="experience-eyebrow-row">
           <p className="eyebrow">Experience</p>
-          <Tooltip data="You can use arrow keys or swiipe if you have a touchscreen!"/>
+          <Tooltip data="Swipe or use arrow keys!"/>
         </div>
         <div className="experience-title">
           <h2>{title}</h2>
