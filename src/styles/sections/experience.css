@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   gap:var(--cards-gap);
-  padding: var(--vertical-padding) 0 var(--vertical-padding) 0;
+  padding: var(--vertical-spacing) 0 var(--vertical-spacing) 0;
 }
 
 .experience-header {
@@ -14,7 +14,7 @@
   justify-content: center;
   align-items: center;
   gap:var(--cards-gap);
-  padding: 0 var(--lateral-padding) 0 var(--lateral-padding);
+  padding: 0 var(--lateral-spacing) 0 var(--lateral-spacing);
 }
 
 .experience-eyebrow-row {

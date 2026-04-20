@@ -8,7 +8,16 @@
   background-repeat: no-repeat;
   background-size: cover;
 
-  padding: var(--vertical-padding) var(--lateral-padding) var(--vertical-padding) var(--lateral-padding);
+  padding: var(--vertical-spacing) var(--lateral-spacing) var(--vertical-spacing) var(--lateral-spacing);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-inner {
+  width: 100%;
+  max-width: calc(1920px - var(--lateral-spacing)*2);
 }
 
 

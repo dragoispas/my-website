@@ -1,6 +1,6 @@
 .education {
   --education-glow-y: -80%;
-  padding: var(--vertical-padding) var(--lateral-padding) calc(var(--vertical-padding)*1.5) var(--lateral-padding);
+  padding: var(--vertical-spacing) var(--lateral-spacing) calc(var(--vertical-spacing)*1.5) var(--lateral-spacing);
   background:
     radial-gradient(circle at 50% var(--education-glow-y), var(--color-primary-20), transparent 70%),
     var(--bg-deep);
@@ -15,7 +15,7 @@
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  max-width: calc(1920px - var(--lateral-padding) - var(--lateral-padding));
+  max-width: calc(1920px - var(--lateral-spacing) - var(--lateral-spacing));
 }
 
 .education-stack {

@@ -1,5 +1,5 @@
 .about {
-  padding: 70px var(--lateral-padding) 70px var(--lateral-padding);
+  padding: 70px var(--lateral-spacing) 70px var(--lateral-spacing);
   --about-glow-y: 180%;
   background:
     radial-gradient(circle at 50% var(--about-glow-y), var(--color-primary-20), transparent 70%),

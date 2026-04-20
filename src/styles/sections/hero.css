@@ -18,7 +18,7 @@
   flex-direction: column;
   gap: 1.5rem;
   align-items: flex-start;
-  padding: calc(var(--vertical-padding) * 2.5) var(--lateral-padding) var(--vertical-padding) var(--lateral-padding);
+  padding: calc(var(--vertical-spacing) * 2.5) var(--lateral-spacing) var(--vertical-spacing) var(--lateral-spacing);
 }
 
 .hero::before {

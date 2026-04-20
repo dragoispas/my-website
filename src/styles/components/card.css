@@ -5,7 +5,7 @@
   justify-content: flex-start;
   align-items: center;
   gap:var(--cards-gap);
-  padding: 0 var(--lateral-padding) 0 var(--lateral-padding);
+  padding: 0 var(--lateral-spacing) 0 var(--lateral-spacing);
   flex-shrink: 0;
   flex-grow: 0;
 }
@@ -14,7 +14,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: calc(1920px - var(--lateral-padding) - var(--lateral-padding));
+  max-width: calc(1920px - var(--lateral-spacing) - var(--lateral-spacing));
   margin-top: 1rem;
   gap: 1rem;
   width: 100%;

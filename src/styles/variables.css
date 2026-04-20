@@ -33,8 +33,8 @@
   --tooltip-bg-color: hsl(var(--accent-hue) 22% 22% / 0.82);
   --tooltip-arrow-size: 15px;
 
-  --lateral-padding: clamp(1.5rem, 6vw, 6rem);
-  --vertical-padding: clamp(4rem, 6vw, 6rem);
+  --lateral-spacing: clamp(1.5rem, 6vw, 6rem);
+  --vertical-spacing: clamp(4rem, 6vw, 6rem);
   --cards-gap: clamp(2rem, 3vw, 3rem);
 
   --hero-title: clamp(1.5rem, 5vw, 2.5rem);
