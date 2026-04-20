@@ -1,4 +1,4 @@
-import avatar from "../avatar.jpeg"
+import avatar from "../assets/avatar.jpeg"
 import { heroData } from "../data"
 
 export default function HeroSection() {
